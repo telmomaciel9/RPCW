@@ -1,0 +1,121 @@
+ 
+###  http://rpcw.di.uminho.pt/2024/corridas#708
+<http://rpcw.di.uminho.pt/2024/corridas#708> rdf:type owl:NamedIndividual ,
+                                                      :Corredor ;
+                                             :temHobby :ler ;
+                                             :temTshirt :azul ;
+                                             :vive :Bahia ;
+                                             :idade "34"^^xsd:int ;
+                                             :nome "Edgar" ;
+                                             :número "708" .
+
+###  http://rpcw.di.uminho.pt/2024/corridas#Bahia
+:Bahia rdf:type owl:NamedIndividual ,
+                :Estado .
+
+
+###  http://rpcw.di.uminho.pt/2024/corridas#ler
+:ler rdf:type owl:NamedIndividual ,
+              :Hobby .
+
+
+###  http://rpcw.di.uminho.pt/2024/corridas#azul
+:azul rdf:type owl:NamedIndividual ,
+                     :Tshirt .
+                                              
+###  http://rpcw.di.uminho.pt/2024/corridas#963
+<http://rpcw.di.uminho.pt/2024/corridas#963> rdf:type owl:NamedIndividual ,
+                                                      :Corredor ;
+                                             :temHobby :cantar ;
+                                             :temTshirt :amarela ;
+                                             :vive :Paraná ;
+                                             :idade "25"^^xsd:int ;
+                                             :nome "Paulo" ;
+                                             :número "963" .
+
+###  http://rpcw.di.uminho.pt/2024/corridas#Paraná
+:Paraná rdf:type owl:NamedIndividual ,
+                :Estado .
+
+
+###  http://rpcw.di.uminho.pt/2024/corridas#cantar
+:cantar rdf:type owl:NamedIndividual ,
+              :Hobby .
+
+
+###  http://rpcw.di.uminho.pt/2024/corridas#amarela
+:amarela rdf:type owl:NamedIndividual ,
+                     :Tshirt .
+                                              
+###  http://rpcw.di.uminho.pt/2024/corridas#899
+<http://rpcw.di.uminho.pt/2024/corridas#899> rdf:type owl:NamedIndividual ,
+                                                      :Corredor ;
+                                             :temHobby :pintar ;
+                                             :temTshirt :vermelha ;
+                                             :vive :Minas_Gerais ;
+                                             :idade "39"^^xsd:int ;
+                                             :nome "Tiago" ;
+                                             :número "899" .
+
+###  http://rpcw.di.uminho.pt/2024/corridas#Minas_Gerais
+:Minas_Gerais rdf:type owl:NamedIndividual ,
+                :Estado .
+
+
+###  http://rpcw.di.uminho.pt/2024/corridas#pintar
+:pintar rdf:type owl:NamedIndividual ,
+              :Hobby .
+
+
+###  http://rpcw.di.uminho.pt/2024/corridas#vermelha
+:vermelha rdf:type owl:NamedIndividual ,
+                     :Tshirt .
+                                              
+###  http://rpcw.di.uminho.pt/2024/corridas#612
+<http://rpcw.di.uminho.pt/2024/corridas#612> rdf:type owl:NamedIndividual ,
+                                                      :Corredor ;
+                                             :temHobby :dançar ;
+                                             :temTshirt :branca ;
+                                             :vive :Rio_de_Janeiro ;
+                                             :idade "41"^^xsd:int ;
+                                             :nome "Lúcio" ;
+                                             :número "612" .
+
+###  http://rpcw.di.uminho.pt/2024/corridas#Rio_de_Janeiro
+:Rio_de_Janeiro rdf:type owl:NamedIndividual ,
+                :Estado .
+
+
+###  http://rpcw.di.uminho.pt/2024/corridas#dançar
+:dançar rdf:type owl:NamedIndividual ,
+              :Hobby .
+
+
+###  http://rpcw.di.uminho.pt/2024/corridas#branca
+:branca rdf:type owl:NamedIndividual ,
+                     :Tshirt .
+                                              
+###  http://rpcw.di.uminho.pt/2024/corridas#455
+<http://rpcw.di.uminho.pt/2024/corridas#455> rdf:type owl:NamedIndividual ,
+                                                      :Corredor ;
+                                             :temHobby :desenhar ;
+                                             :temTshirt :verde ;
+                                             :vive :São_Paulo ;
+                                             :idade "28"^^xsd:int ;
+                                             :nome "Moacir" ;
+                                             :número "455" .
+
+###  http://rpcw.di.uminho.pt/2024/corridas#São_Paulo
+:São_Paulo rdf:type owl:NamedIndividual ,
+                :Estado .
+
+
+###  http://rpcw.di.uminho.pt/2024/corridas#desenhar
+:desenhar rdf:type owl:NamedIndividual ,
+              :Hobby .
+
+
+###  http://rpcw.di.uminho.pt/2024/corridas#verde
+:verde rdf:type owl:NamedIndividual ,
+                     :Tshirt .
+                                             

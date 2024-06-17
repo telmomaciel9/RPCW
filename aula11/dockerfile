@@ -1,0 +1,14 @@
+FROM python
+
+RUN pip install flask
+
+RUN pip install requests
+
+WORKDIR /app
+
+COPY . .
+
+EXPOSE 3004
+
+CMD [ "python" , "app.py"]
+

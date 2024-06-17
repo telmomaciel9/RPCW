@@ -1,0 +1,669 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://rpcw2024.di.uminho.pt/seres_vivos"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://rpcw2024.di.uminho.pt/seres_vivos">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Annotation>
+        <AnnotationProperty IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#creator"/>
+        <Literal>José Carlos Ramalho</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#date"/>
+        <Literal>2011-12-16</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal>Ontologia para classificação de seres vivos</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Anelídeos"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Anfíbios"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Animal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Aracnídeos"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Artrópodes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Aves"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Bivalves"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Cartilagíneos"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Cefalópodes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Celenterado"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Centípedes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Cordados"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Crustáceos"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Equinoderme"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Espongiário"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Gastrópodes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Insectos"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Mamíferos"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Milípedes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Moluscos"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Nematelmintas"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Peixes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Platelmintas"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Répteis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Ser_Vivo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Vegetal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Ósseos"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#fêmeasGlândulasMamárias"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#temColunaDorsal"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#temEscamas"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#temPeleNua"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#temPelos"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#temPenas"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#temRespiraçãoBranquial"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#bacalhau"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#camarão"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#crocodilo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#leão"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#lula"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#mexilhão"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#papagaio"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#rã"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#tarântula"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#urso"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#creator"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#date"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Cordados"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Animal"/>
+            <DataHasValue>
+                <DataProperty IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#temColunaDorsal"/>
+                <Literal>S</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Mamíferos"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Cordados"/>
+            <DataHasValue>
+                <DataProperty IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#temEscamas"/>
+                <Literal>N</Literal>
+            </DataHasValue>
+            <DataHasValue>
+                <DataProperty IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#temPeleNua"/>
+                <Literal>N</Literal>
+            </DataHasValue>
+            <DataHasValue>
+                <DataProperty IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#temPelos"/>
+                <Literal>S</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Peixes"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Cordados"/>
+            <DataHasValue>
+                <DataProperty IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#temEscamas"/>
+                <Literal>S</Literal>
+            </DataHasValue>
+            <DataHasValue>
+                <DataProperty IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#temRespiraçãoBranquial"/>
+                <Literal>S</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Répteis"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Cordados"/>
+            <DataHasValue>
+                <DataProperty IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#temRespiraçãoBranquial"/>
+                <Literal>N</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Anelídeos"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Animal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Anfíbios"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Cordados"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Animal"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Ser_Vivo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Aracnídeos"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Artrópodes"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Artrópodes"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Animal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Aves"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Cordados"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Bivalves"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Moluscos"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Cartilagíneos"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Peixes"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Cefalópodes"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Moluscos"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Celenterado"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Animal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Centípedes"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Artrópodes"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Crustáceos"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Artrópodes"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Equinoderme"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Animal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Espongiário"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Animal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Gastrópodes"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Moluscos"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Insectos"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Artrópodes"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Milípedes"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Artrópodes"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Moluscos"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Animal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Nematelmintas"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Animal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Platelmintas"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Animal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Vegetal"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Ser_Vivo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Ósseos"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Peixes"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Anelídeos"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Artrópodes"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Celenterado"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Cordados"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Equinoderme"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Espongiário"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Moluscos"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Nematelmintas"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Platelmintas"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Anfíbios"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Aves"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Mamíferos"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Peixes"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Répteis"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Aracnídeos"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Centípedes"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Crustáceos"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Insectos"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Milípedes"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Bivalves"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Cefalópodes"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Gastrópodes"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Cartilagíneos"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Ósseos"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Animal"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#bacalhau"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Animal"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#camarão"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Animal"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#crocodilo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Animal"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#leão"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Animal"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#lula"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Animal"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#mexilhão"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Animal"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#papagaio"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Animal"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#rã"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Animal"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#tarântula"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Animal"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#urso"/>
+    </ClassAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#temColunaDorsal"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#bacalhau"/>
+        <Literal>S</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#temEscamas"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#bacalhau"/>
+        <Literal>S</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#temRespiraçãoBranquial"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#bacalhau"/>
+        <Literal>S</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#temColunaDorsal"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#crocodilo"/>
+        <Literal>S</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#temEscamas"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#crocodilo"/>
+        <Literal>S</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#temRespiraçãoBranquial"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#crocodilo"/>
+        <Literal>N</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#temColunaDorsal"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#leão"/>
+        <Literal>S</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#temEscamas"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#leão"/>
+        <Literal>N</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#temPeleNua"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#leão"/>
+        <Literal>N</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#temPelos"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#leão"/>
+        <Literal>S</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#temColunaDorsal"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#urso"/>
+        <Literal>S</Literal>
+    </DataPropertyAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Anelídeos</IRI>
+        <Literal xml:lang="en">Anelídeos</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Anfíbios</IRI>
+        <Literal xml:lang="en">Anfíbios</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Animal</IRI>
+        <Literal xml:lang="en">Animal</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Aracnídeos</IRI>
+        <Literal xml:lang="en">Aracnídeos</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Artrópodes</IRI>
+        <Literal xml:lang="en">Artrópodes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Aves</IRI>
+        <Literal xml:lang="en">Aves</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Bivalves</IRI>
+        <Literal xml:lang="en">Bivalves</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Cartilagíneos</IRI>
+        <Literal xml:lang="en">Cartilagíneos</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Cefalópodes</IRI>
+        <Literal xml:lang="en">Cefalópodes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Celenterado</IRI>
+        <Literal xml:lang="en">Celenterado</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Centípedes</IRI>
+        <Literal xml:lang="en">Centípedes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Cordados</IRI>
+        <Literal xml:lang="en">Cordados</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Crustáceos</IRI>
+        <Literal xml:lang="en">Crustáceos</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Equinoderme</IRI>
+        <Literal xml:lang="en">Equinoderme</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Espongiário</IRI>
+        <Literal xml:lang="en">Espongiário</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Gastrópodes</IRI>
+        <Literal xml:lang="en">Gastrópodes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Insectos</IRI>
+        <Literal xml:lang="en">Insectos</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Mamíferos</IRI>
+        <Literal xml:lang="en">Mamíferos</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Milípedes</IRI>
+        <Literal xml:lang="en">Milípedes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Moluscos</IRI>
+        <Literal xml:lang="en">Moluscos</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Nematelmintas</IRI>
+        <Literal xml:lang="en">Nematelmintas</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Peixes</IRI>
+        <Literal xml:lang="en">Peixes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Platelmintas</IRI>
+        <Literal xml:lang="en">Platelmintas</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Répteis</IRI>
+        <Literal xml:lang="en">Répteis</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Ser_Vivo</IRI>
+        <Literal xml:lang="en">Ser Vivo</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Vegetal</IRI>
+        <Literal xml:lang="en">Vegetal</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#bacalhau</IRI>
+        <Literal xml:lang="en">bacalhau</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#camarão</IRI>
+        <Literal xml:lang="en">camarão</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#creator</IRI>
+        <Literal xml:lang="en">creator</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#crocodilo</IRI>
+        <Literal xml:lang="en">crocodilo</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#date</IRI>
+        <Literal xml:lang="en">date</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#fêmeasGlândulasMamárias</IRI>
+        <Literal xml:lang="en">fêmeasGlândulasMamárias</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#leão</IRI>
+        <Literal xml:lang="en">leão</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#lula</IRI>
+        <Literal xml:lang="en">lula</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#mexilhão</IRI>
+        <Literal xml:lang="en">mexilhão</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#papagaio</IRI>
+        <Literal xml:lang="en">papagaio</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#rã</IRI>
+        <Literal xml:lang="en">rã</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#tarântula</IRI>
+        <Literal xml:lang="en">tarântula</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#temColunaDorsal</IRI>
+        <Literal xml:lang="en">temColunaDorsal</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#temEscamas</IRI>
+        <Literal xml:lang="en">temEscamas</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#temPeleNua</IRI>
+        <Literal xml:lang="en">temPeleNua</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#temPelos</IRI>
+        <Literal xml:lang="en">temPelos</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#temPenas</IRI>
+        <Literal xml:lang="en">temPenas</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#temRespiraçãoBranquial</IRI>
+        <Literal xml:lang="en">temRespiraçãoBranquial</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#urso</IRI>
+        <Literal xml:lang="en">urso</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/11/seresvivos.owl#Ósseos</IRI>
+        <Literal xml:lang="en">Ósseos</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+

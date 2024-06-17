@@ -1,0 +1,374 @@
+@prefix : <http://rpcw.di.uminho.pt/2024/pizza/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://rpcw.di.uminho.pt/2024/pizza/> .
+
+<http://rpcw.di.uminho.pt/2024/pizza> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/pizza#hasBase
+:hasBase rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :hasIngredient ;
+         owl:inverseOf :isBaseOf ;
+         rdfs:domain :Pizza ;
+         rdfs:range :PizzaBase .
+
+
+###  http://rpcw.di.uminho.pt/2024/pizza#hasIngredient
+:hasIngredient rdf:type owl:ObjectProperty ;
+               owl:inverseOf :isIngredientOf .
+
+
+###  http://rpcw.di.uminho.pt/2024/pizza#hasTopping
+:hasTopping rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :hasIngredient ;
+            owl:inverseOf :isToppingOf ;
+            rdfs:domain :Pizza ;
+            rdfs:range :PizzaTopping .
+
+
+###  http://rpcw.di.uminho.pt/2024/pizza#isBaseOf
+:isBaseOf rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :isIngredientOf .
+
+
+###  http://rpcw.di.uminho.pt/2024/pizza#isIngredientOf
+:isIngredientOf rdf:type owl:ObjectProperty .
+
+
+###  http://rpcw.di.uminho.pt/2024/pizza#isToppingOf
+:isToppingOf rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :isIngredientOf .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/pizza#AmericanaHotPizza
+:AmericanaHotPizza rdf:type owl:Class ;
+                   rdfs:subClassOf :NamedPizza ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasTopping ;
+                                     owl:someValuesFrom :JalapenoPepperTopping
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasTopping ;
+                                     owl:someValuesFrom :MozzarellaTopping
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasTopping ;
+                                     owl:someValuesFrom :PepperoniTopping
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasTopping ;
+                                     owl:someValuesFrom :TomatoTopping
+                                   ] .
+
+
+###  http://rpcw.di.uminho.pt/2024/pizza#AmericanaPizza
+:AmericanaPizza rdf:type owl:Class ;
+                rdfs:subClassOf :NamedPizza ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasTopping ;
+                                  owl:someValuesFrom :MozzarellaTopping
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasTopping ;
+                                  owl:someValuesFrom :PepperoniTopping
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasTopping ;
+                                  owl:someValuesFrom :TomatoTopping
+                                ] .
+
+
+###  http://rpcw.di.uminho.pt/2024/pizza#AnchovyTopping
+:AnchovyTopping rdf:type owl:Class ;
+                rdfs:subClassOf :SeafoodTopping .
+
+
+###  http://rpcw.di.uminho.pt/2024/pizza#CaperTopping
+:CaperTopping rdf:type owl:Class ;
+              rdfs:subClassOf :VegetableTopping .
+
+
+###  http://rpcw.di.uminho.pt/2024/pizza#CheeseTopping
+:CheeseTopping rdf:type owl:Class ;
+               rdfs:subClassOf :PizzaTopping .
+
+
+###  http://rpcw.di.uminho.pt/2024/pizza#CheesyPizza
+:CheesyPizza rdf:type owl:Class ;
+             owl:equivalentClass [ owl:intersectionOf ( :Pizza
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :hasTopping ;
+                                                          owl:someValuesFrom :CheeseTopping
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] .
+
+
+###  http://rpcw.di.uminho.pt/2024/pizza#DeepPanBase
+:DeepPanBase rdf:type owl:Class ;
+             rdfs:subClassOf :PizzaBase ;
+             owl:disjointWith :ThinAndCrispyBase .
+
+
+###  http://rpcw.di.uminho.pt/2024/pizza#GreenPepperTopping
+:GreenPepperTopping rdf:type owl:Class ;
+                    rdfs:subClassOf :PepperTopping .
+
+
+###  http://rpcw.di.uminho.pt/2024/pizza#HamTopping
+:HamTopping rdf:type owl:Class ;
+            rdfs:subClassOf :MeatTopping .
+
+
+###  http://rpcw.di.uminho.pt/2024/pizza#JalapenoPepperTopping
+:JalapenoPepperTopping rdf:type owl:Class ;
+                       rdfs:subClassOf :PepperTopping .
+
+
+###  http://rpcw.di.uminho.pt/2024/pizza#MargheritaPizza
+:MargheritaPizza rdf:type owl:Class ;
+                 rdfs:subClassOf :NamedPizza ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasTopping ;
+                                   owl:someValuesFrom :MozzarellaTopping
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasTopping ;
+                                   owl:someValuesFrom :TomatoTopping
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasTopping ;
+                                   owl:allValuesFrom [ rdf:type owl:Class ;
+                                                       owl:unionOf ( :MozzarellaTopping
+                                                                     :TomatoTopping
+                                                                   )
+                                                     ]
+                                 ] .
+
+
+###  http://rpcw.di.uminho.pt/2024/pizza#MeatTopping
+:MeatTopping rdf:type owl:Class ;
+             rdfs:subClassOf :PizzaTopping .
+
+
+###  http://rpcw.di.uminho.pt/2024/pizza#MozzarellaTopping
+:MozzarellaTopping rdf:type owl:Class ;
+                   rdfs:subClassOf :CheeseTopping ;
+                   owl:disjointWith :ParmesanTopping .
+
+
+###  http://rpcw.di.uminho.pt/2024/pizza#MushroomTopping
+:MushroomTopping rdf:type owl:Class ;
+                 rdfs:subClassOf :VegetableTopping .
+
+
+###  http://rpcw.di.uminho.pt/2024/pizza#NamedPizza
+:NamedPizza rdf:type owl:Class ;
+            rdfs:subClassOf :Pizza .
+
+
+###  http://rpcw.di.uminho.pt/2024/pizza#OliveTopping
+:OliveTopping rdf:type owl:Class ;
+              rdfs:subClassOf :VegetableTopping .
+
+
+###  http://rpcw.di.uminho.pt/2024/pizza#ParmesanTopping
+:ParmesanTopping rdf:type owl:Class ;
+                 rdfs:subClassOf :CheeseTopping .
+
+
+###  http://rpcw.di.uminho.pt/2024/pizza#PepperTopping
+:PepperTopping rdf:type owl:Class ;
+               rdfs:subClassOf :VegetableTopping .
+
+
+###  http://rpcw.di.uminho.pt/2024/pizza#PepperoniTopping
+:PepperoniTopping rdf:type owl:Class ;
+                  rdfs:subClassOf :MeatTopping .
+
+
+###  http://rpcw.di.uminho.pt/2024/pizza#Pizza
+:Pizza rdf:type owl:Class ;
+       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasBase ;
+                         owl:someValuesFrom :PizzaBase
+                       ] .
+
+
+###  http://rpcw.di.uminho.pt/2024/pizza#PizzaBase
+:PizzaBase rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/pizza#PizzaTopping
+:PizzaTopping rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/pizza#PrawnTopping
+:PrawnTopping rdf:type owl:Class ;
+              rdfs:subClassOf :SeafoodTopping .
+
+
+###  http://rpcw.di.uminho.pt/2024/pizza#RedPepperTopping
+:RedPepperTopping rdf:type owl:Class ;
+                  rdfs:subClassOf :PepperTopping .
+
+
+###  http://rpcw.di.uminho.pt/2024/pizza#SalamiTopping
+:SalamiTopping rdf:type owl:Class ;
+               rdfs:subClassOf :MeatTopping .
+
+
+###  http://rpcw.di.uminho.pt/2024/pizza#SeafoodTopping
+:SeafoodTopping rdf:type owl:Class ;
+                rdfs:subClassOf :PizzaTopping .
+
+
+###  http://rpcw.di.uminho.pt/2024/pizza#SohoPizza
+:SohoPizza rdf:type owl:Class ;
+           rdfs:subClassOf :NamedPizza ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasTopping ;
+                             owl:someValuesFrom :MozzarellaTopping
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasTopping ;
+                             owl:someValuesFrom :OliveTopping
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasTopping ;
+                             owl:someValuesFrom :ParmesanTopping
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasTopping ;
+                             owl:someValuesFrom :TomatoTopping
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasTopping ;
+                             owl:allValuesFrom [ rdf:type owl:Class ;
+                                                 owl:unionOf ( :MozzarellaTopping
+                                                               :ParmesanTopping
+                                                               :VegetableTopping
+                                                             )
+                                               ]
+                           ] .
+
+
+###  http://rpcw.di.uminho.pt/2024/pizza#SpicyBeefTopping
+:SpicyBeefTopping rdf:type owl:Class ;
+                  rdfs:subClassOf :MeatTopping .
+
+
+###  http://rpcw.di.uminho.pt/2024/pizza#ThinAndCrispyBase
+:ThinAndCrispyBase rdf:type owl:Class ;
+                   rdfs:subClassOf :PizzaBase .
+
+
+###  http://rpcw.di.uminho.pt/2024/pizza#TomatoTopping
+:TomatoTopping rdf:type owl:Class ;
+               rdfs:subClassOf :VegetableTopping .
+
+
+###  http://rpcw.di.uminho.pt/2024/pizza#TunaTopping
+:TunaTopping rdf:type owl:Class ;
+             rdfs:subClassOf :SeafoodTopping .
+
+
+###  http://rpcw.di.uminho.pt/2024/pizza#VegetableTopping
+:VegetableTopping rdf:type owl:Class ;
+                  rdfs:subClassOf :PizzaTopping .
+
+
+###  http://rpcw.di.uminho.pt/2024/pizza#VegetarianPizza
+:VegetarianPizza rdf:type owl:Class ;
+                 owl:equivalentClass [ owl:intersectionOf ( :Pizza
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :hasTopping ;
+                                                              owl:allValuesFrom [ rdf:type owl:Class ;
+                                                                                  owl:unionOf ( :CheeseTopping
+                                                                                                :VegetableTopping
+                                                                                              )
+                                                                                ]
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :AmericanaHotPizza
+                :AmericanaPizza
+                :MargheritaPizza
+                :SohoPizza
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :AnchovyTopping
+                :PrawnTopping
+                :TunaTopping
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :CaperTopping
+                :MushroomTopping
+                :OliveTopping
+                :PepperTopping
+                :TomatoTopping
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :CheeseTopping
+                :MeatTopping
+                :SeafoodTopping
+                :VegetableTopping
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :GreenPepperTopping
+                :JalapenoPepperTopping
+                :RedPepperTopping
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :HamTopping
+                :PepperoniTopping
+                :SalamiTopping
+                :SpicyBeefTopping
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Pizza
+                :PizzaBase
+                :PizzaTopping
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi

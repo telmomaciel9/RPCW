@@ -1,0 +1,16 @@
+version: '2'
+services:
+  web:
+    container_name: pokemon
+    image: rpcw2024/webapp
+    ports:
+      - "3004:3004"
+    depends_on:
+      - gdb
+    links:
+      - gdb
+  gdb:
+    container_name: graphdb_RPCW
+    image: khaller/graphdb-free
+    ports:
+      - "7200:7200"

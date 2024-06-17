@@ -1,0 +1,573 @@
+140
+@prefix : <http://rpcw.di.uminho.pt/2024/cinema/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://rpcw.di.uminho.pt/2024/cinema> a owl:Ontology .
+
+:Actor a owl:Class ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Person [ a owl:Restriction ;
+                        owl:onProperty :acted ;
+                        owl:someValuesFrom :Film ] ) ] .
+
+:Musician a owl:Class ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Person [ a owl:Restriction ;
+                        owl:onProperty :composed ;
+                        owl:someValuesFrom :Music ] ) ] .
+
+:Producer a owl:Class ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Person [ a owl:Restriction ;
+                        owl:onProperty :produced ;
+                        owl:someValuesFrom :Film ] ) ] .
+
+:ScreenWriter a owl:Class ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Person [ a owl:Restriction ;
+                        owl:onProperty :screenWrited ;
+                        owl:someValuesFrom :Film ] ) ] .
+
+:Screenplay a owl:Class ;
+    rdfs:subClassOf :Artwork .
+
+:TheSleepingBeauty a :Film,
+        owl:NamedIndividual ;
+    :description "This is a soviet film from 1930" ;
+    :duration 76 ;
+    :hasActor :NikolaySimonov,
+        :VarvaraMyasnikova ;
+    :hasDirector :SergeiVasilyev ;
+    :hasScreenWriter :YevgeniShneider ;
+    :title "The Spleeping Beauty" .
+
+:Twilight a :Film,
+        owl:NamedIndividual ;
+    :hasDirector :CatherineHardwicke .
+
+:Writer a owl:Class ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Person [ a owl:Restriction ;
+                        owl:onProperty :wrote ;
+                        owl:someValuesFrom :Book ] ) ] .
+
+:birthDate a owl:DatatypeProperty .
+
+:description a owl:DatatypeProperty .
+
+:duration a owl:DatatypeProperty .
+
+:hasGenre a owl:ObjectProperty ;
+    rdfs:domain :Film ;
+    rdfs:range :Genre .
+
+:hasMusic a owl:ObjectProperty ;
+    rdfs:domain :Film ;
+    rdfs:range :Music .
+
+:hasProducer a owl:ObjectProperty ;
+    rdfs:domain :Film ;
+    rdfs:range :Person ;
+    owl:inverseOf :produced .
+
+:hasScreenWriter a owl:ObjectProperty ;
+    owl:inverseOf :screenWrited .
+
+:hasWriter a owl:ObjectProperty ;
+    rdfs:domain :Book ;
+    rdfs:range :Person .
+
+:name a owl:DatatypeProperty .
+
+:title a owl:DatatypeProperty .
+
+:CatherineHardwicke a :Director,
+        owl:NamedIndividual .
+
+:Director a owl:Class ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Person [ a owl:Restriction ;
+                        owl:onProperty :directed ;
+                        owl:someValuesFrom :Film ] ) ] .
+
+:Genre a owl:Class .
+
+:NikolaySimonov a owl:NamedIndividual ;
+    :name "Nikolay Simonov" .
+
+:SergeiVasilyev a owl:NamedIndividual ;
+    :name "Sergei Vasilyev" .
+
+:VarvaraMyasnikova a owl:NamedIndividual ;
+    :birthDate "1900-09-22" ;
+    :name "Varvara Myasnikova" .
+
+:YevgeniShneider a :Person,
+        owl:NamedIndividual ;
+    :name "Yevgeni Shneider" .
+
+:acted a owl:ObjectProperty ;
+    owl:inverseOf :hasActor .
+
+:composed a owl:ObjectProperty ;
+    owl:inverseOf :hasComposer .
+
+:directed a owl:ObjectProperty ;
+    owl:inverseOf :hasDirector .
+
+:hasActor a owl:ObjectProperty ;
+    rdfs:domain :Film ;
+    rdfs:range :Person .
+
+:hasComposer a owl:ObjectProperty ;
+    rdfs:domain :Music ;
+    rdfs:range :Person .
+
+:hasDirector a owl:ObjectProperty ;
+    rdfs:domain :Film ;
+    rdfs:range :Person .
+
+:wrote a owl:ObjectProperty ;
+    rdfs:domain :Person .
+
+:Book a owl:Class ;
+    rdfs:subClassOf :Artwork .
+
+:produced a owl:ObjectProperty .
+
+:screenWrited a owl:ObjectProperty .
+
+:Artwork a owl:Class .
+
+:Music a owl:Class ;
+    rdfs:subClassOf :Artwork .
+
+:Film a owl:Class .
+
+:Person a owl:Class .
+
+
+=====================================
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/hasDirector'),
+ rdflib.term.URIRef('http://www.w3.org/2000/01/rdf-schema#range'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Person'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b10'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#Restriction'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/TheSleepingBeauty'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Film'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/hasWriter'),
+ rdflib.term.URIRef('http://www.w3.org/2000/01/rdf-schema#domain'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Book'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b13'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#Class'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/hasScreenWriter'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#ObjectProperty'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b14'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#onProperty'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/produced'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/YevgeniShneider'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#NamedIndividual'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Screenplay'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#Class'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b22'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#someValuesFrom'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Book'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/hasDirector'),
+ rdflib.term.URIRef('http://www.w3.org/2000/01/rdf-schema#domain'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Film'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/hasDirector'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#ObjectProperty'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b15'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#first'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Person'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Book'),
+ rdflib.term.URIRef('http://www.w3.org/2000/01/rdf-schema#subClassOf'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Artwork'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b21'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#Class'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Artwork'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#Class'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Musician'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#equivalentClass'),
+ rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b9'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b14'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#Restriction'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b10'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#onProperty'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/composed'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/hasProducer'),
+ rdflib.term.URIRef('http://www.w3.org/2000/01/rdf-schema#range'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Person'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b12'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#first'),
+ rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b10'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/acted'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#ObjectProperty'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/SergeiVasilyev'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#NamedIndividual'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b24'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#rest'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#nil'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/hasGenre'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#ObjectProperty'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b1'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#intersectionOf'),
+ rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b3'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Musician'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#Class'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/SergeiVasilyev'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/name'),
+ rdflib.term.Literal('Sergei Vasilyev'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b1'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#Class'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Writer'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#equivalentClass'),
+ rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b21'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b6'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#onProperty'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/directed'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/hasActor'),
+ rdflib.term.URIRef('http://www.w3.org/2000/01/rdf-schema#range'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Person'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/YevgeniShneider'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Person'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/hasMusic'),
+ rdflib.term.URIRef('http://www.w3.org/2000/01/rdf-schema#domain'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Film'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/hasMusic'),
+ rdflib.term.URIRef('http://www.w3.org/2000/01/rdf-schema#range'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Music'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/TheSleepingBeauty'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#NamedIndividual'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/wrote'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#ObjectProperty'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/CatherineHardwicke'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#NamedIndividual'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/acted'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#inverseOf'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/hasActor'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/TheSleepingBeauty'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/title'),
+ rdflib.term.Literal('The Spleeping Beauty'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Music'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#Class'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b4'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#rest'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#nil'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b7'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#rest'),
+ rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b8'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b21'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#intersectionOf'),
+ rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b23'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Twilight'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/hasDirector'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/CatherineHardwicke'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b16'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#rest'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#nil'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Producer'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#equivalentClass'),
+ rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b13'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b11'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#rest'),
+ rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b12'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Book'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#Class'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/hasGenre'),
+ rdflib.term.URIRef('http://www.w3.org/2000/01/rdf-schema#domain'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Film'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/TheSleepingBeauty'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/hasScreenWriter'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/YevgeniShneider'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/produced'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#ObjectProperty'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b18'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#onProperty'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/screenWrited'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/TheSleepingBeauty'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/description'),
+ rdflib.term.Literal('This is a soviet film from 1930'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b6'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#someValuesFrom'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Film'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b10'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#someValuesFrom'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Music'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/hasComposer'),
+ rdflib.term.URIRef('http://www.w3.org/2000/01/rdf-schema#domain'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Music'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Actor'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#Class'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/name'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#DatatypeProperty'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b7'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#first'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Person'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b9'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#intersectionOf'),
+ rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b11'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b23'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#first'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Person'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b22'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#Restriction'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/NikolaySimonov'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#NamedIndividual'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/hasMusic'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#ObjectProperty'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b18'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#Restriction'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b5'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#intersectionOf'),
+ rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b7'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b6'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#Restriction'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/composed'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#ObjectProperty'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b19'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#rest'),
+ rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b20'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/VarvaraMyasnikova'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/name'),
+ rdflib.term.Literal('Varvara Myasnikova'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b2'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#onProperty'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/acted'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b3'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#first'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Person'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/directed'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#inverseOf'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/hasDirector'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b4'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#first'),
+ rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b2'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/hasWriter'),
+ rdflib.term.URIRef('http://www.w3.org/2000/01/rdf-schema#range'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Person'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b9'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#Class'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/screenWrited'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#ObjectProperty'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b19'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#first'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Person'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/hasGenre'),
+ rdflib.term.URIRef('http://www.w3.org/2000/01/rdf-schema#range'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Genre'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/hasActor'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#ObjectProperty'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b15'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#rest'),
+ rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b16'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b5'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#Class'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Twilight'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Film'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/CatherineHardwicke'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Director'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b2'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#someValuesFrom'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Film'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Director'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#Class'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b8'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#first'),
+ rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b6'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b16'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#first'),
+ rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b14'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/birthDate'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#DatatypeProperty'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b8'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#rest'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#nil'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/hasWriter'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#ObjectProperty'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b18'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#someValuesFrom'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Film'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b24'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#first'),
+ rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b22'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/TheSleepingBeauty'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/hasActor'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/NikolaySimonov'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b20'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#rest'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#nil'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/wrote'),
+ rdflib.term.URIRef('http://www.w3.org/2000/01/rdf-schema#domain'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Person'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b3'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#rest'),
+ rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b4'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Music'),
+ rdflib.term.URIRef('http://www.w3.org/2000/01/rdf-schema#subClassOf'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Artwork'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/NikolaySimonov'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/name'),
+ rdflib.term.Literal('Nikolay Simonov'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/duration'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#DatatypeProperty'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Screenplay'),
+ rdflib.term.URIRef('http://www.w3.org/2000/01/rdf-schema#subClassOf'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Artwork'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b2'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#Restriction'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/ScreenWriter'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#Class'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/description'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#DatatypeProperty'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/TheSleepingBeauty'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/duration'),
+ rdflib.term.Literal('76', datatype=rdflib.term.URIRef('http://www.w3.org/2001/XMLSchema#integer')))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/VarvaraMyasnikova'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/birthDate'),
+ rdflib.term.Literal('1900-09-22'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/TheSleepingBeauty'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/hasDirector'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/SergeiVasilyev'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/hasProducer'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#inverseOf'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/produced'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/hasActor'),
+ rdflib.term.URIRef('http://www.w3.org/2000/01/rdf-schema#domain'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Film'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Producer'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#Class'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Director'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#equivalentClass'),
+ rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b5'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b11'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#first'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Person'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/title'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#DatatypeProperty'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b17'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#intersectionOf'),
+ rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b19'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/directed'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#ObjectProperty'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b14'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#someValuesFrom'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Film'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Writer'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#Class'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b22'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#onProperty'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/wrote'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#Ontology'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b20'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#first'),
+ rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b18'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b17'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#Class'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/hasComposer'),
+ rdflib.term.URIRef('http://www.w3.org/2000/01/rdf-schema#range'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Person'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/YevgeniShneider'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/name'),
+ rdflib.term.Literal('Yevgeni Shneider'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Twilight'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#NamedIndividual'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Actor'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#equivalentClass'),
+ rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b1'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Person'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#Class'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b23'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#rest'),
+ rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b24'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/VarvaraMyasnikova'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#NamedIndividual'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/ScreenWriter'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#equivalentClass'),
+ rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b17'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/composed'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#inverseOf'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/hasComposer'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b13'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#intersectionOf'),
+ rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b15'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/hasProducer'),
+ rdflib.term.URIRef('http://www.w3.org/2000/01/rdf-schema#domain'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Film'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/hasComposer'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#ObjectProperty'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/hasProducer'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#ObjectProperty'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/TheSleepingBeauty'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/hasActor'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/VarvaraMyasnikova'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/hasScreenWriter'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#inverseOf'),
+ rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/screenWrited'))
+(rdflib.term.BNode('nddf2b1428e76476c8bc45c941323bde2b12'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#rest'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#nil'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Genre'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#Class'))
+(rdflib.term.URIRef('http://rpcw.di.uminho.pt/2024/cinema/Film'),
+ rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+ rdflib.term.URIRef('http://www.w3.org/2002/07/owl#Class'))

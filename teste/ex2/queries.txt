@@ -1,0 +1,89 @@
+Querie 1
+
+PREFIX : <http://www.example.org/disease-ontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT (COUNT(?disease) AS ?numberOfDiseases)
+WHERE {
+  ?disease rdf:type :Disease .
+}
+
+
+Querie 2
+
+PREFIX : <http://www.example.org/disease-ontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?disease
+WHERE {
+  ?disease rdf:type :Disease .
+  ?disease :hasSymptom :yellowish_skin .
+}
+
+
+Querie 3
+
+PREFIX : <http://www.example.org/disease-ontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?disease
+WHERE {
+  ?disease rdf:type :Disease .
+  ?disease :hasTreatment :Exercise .
+}
+
+
+Querie 4
+
+PREFIX : <http://www.example.org/disease-ontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?name
+WHERE {
+  ?patient rdf:type :Patient .
+  ?patient :name ?name .
+}
+ORDER BY ASC(?name)
+
+
+Exercicio 13
+
+PREFIX : <http://www.example.org/disease-ontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?disease (COUNT(?patient) AS ?numberOfPatients)
+WHERE {
+  ?patient rdf:type :Patient .
+  ?patient :exhibitsSymptom ?symptom .
+  ?disease :hasSymptom ?symptom .
+}
+GROUP BY ?disease
+ORDER BY DESC(?numberOfPatients)
+
+
+Exercicio 14
+
+PREFIX : <http://www.example.org/disease-ontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?symptom (COUNT(?disease) AS ?numberOfDiseases)
+WHERE {
+  ?disease rdf:type :Disease .
+  ?disease :hasSymptom ?symptom .
+}
+GROUP BY ?symptom
+ORDER BY DESC(?numberOfDiseases)
+
+
+Exercicio 15
+
+PREFIX : <http://www.example.org/disease-ontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?treatment (COUNT(?disease) AS ?numberOfDiseases)
+WHERE {
+  ?disease rdf:type :Disease .
+  ?disease :hasTreatment ?treatment .
+}
+GROUP BY ?treatment
+ORDER BY DESC(?numberOfDiseases)

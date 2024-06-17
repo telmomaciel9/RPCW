@@ -1,0 +1,394 @@
+@prefix : <http://rpcw2024.di.uminho.pt/seres_vivos#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://rpcw2024.di.uminho.pt/seres_vivos#> .
+
+<http://rpcw2024.di.uminho.pt/seres_vivos> rdf:type owl:Ontology ;
+                                            :creator "José Carlos Ramalho" ;
+                                            :date "2011-12-16" ;
+                                            rdfs:comment "Ontologia para classificação de seres vivos" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#creator
+:creator rdf:type owl:AnnotationProperty ;
+         rdfs:label "creator"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#date
+:date rdf:type owl:AnnotationProperty ;
+      rdfs:label "date"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#fêmeasGlândulasMamárias
+:fêmeasGlândulasMamárias rdf:type owl:DatatypeProperty ;
+                         rdfs:label "fêmeasGlândulasMamárias"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#temColunaDorsal
+:temColunaDorsal rdf:type owl:DatatypeProperty ;
+                 rdfs:label "temColunaDorsal"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#temEscamas
+:temEscamas rdf:type owl:DatatypeProperty ;
+            rdfs:label "temEscamas"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#temPeleNua
+:temPeleNua rdf:type owl:DatatypeProperty ;
+            rdfs:label "temPeleNua"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#temPelos
+:temPelos rdf:type owl:DatatypeProperty ;
+          rdfs:label "temPelos"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#temPenas
+:temPenas rdf:type owl:DatatypeProperty ;
+          rdfs:label "temPenas"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#temRespiraçãoBranquial
+:temRespiraçãoBranquial rdf:type owl:DatatypeProperty ;
+                        rdfs:label "temRespiraçãoBranquial"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#Anelídeos
+:Anelídeos rdf:type owl:Class ;
+           rdfs:subClassOf :Animal ;
+           rdfs:label "Anelídeos"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#Anfíbios
+:Anfíbios rdf:type owl:Class ;
+          rdfs:subClassOf :Cordados ;
+          rdfs:label "Anfíbios"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#Animal
+:Animal rdf:type owl:Class ;
+        rdfs:subClassOf :Ser_Vivo ;
+        rdfs:label "Animal"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#Aracnídeos
+:Aracnídeos rdf:type owl:Class ;
+            rdfs:subClassOf :Artrópodes ;
+            rdfs:label "Aracnídeos"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#Artrópodes
+:Artrópodes rdf:type owl:Class ;
+            rdfs:subClassOf :Animal ;
+            rdfs:label "Artrópodes"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#Aves
+:Aves rdf:type owl:Class ;
+      rdfs:subClassOf :Cordados ;
+      rdfs:label "Aves"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#Bivalves
+:Bivalves rdf:type owl:Class ;
+          rdfs:subClassOf :Moluscos ;
+          rdfs:label "Bivalves"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#Cartilagíneos
+:Cartilagíneos rdf:type owl:Class ;
+               rdfs:subClassOf :Peixes ;
+               owl:disjointWith :Ósseos ;
+               rdfs:label "Cartilagíneos"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#Cefalópodes
+:Cefalópodes rdf:type owl:Class ;
+             rdfs:subClassOf :Moluscos ;
+             rdfs:label "Cefalópodes"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#Celenterado
+:Celenterado rdf:type owl:Class ;
+             rdfs:subClassOf :Animal ;
+             rdfs:label "Celenterado"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#Centípedes
+:Centípedes rdf:type owl:Class ;
+            rdfs:subClassOf :Artrópodes ;
+            rdfs:label "Centípedes"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#Cordados
+:Cordados rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :Animal
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :temColunaDorsal ;
+                                                       owl:hasValue "S"
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ;
+          rdfs:label "Cordados"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#Crustáceos
+:Crustáceos rdf:type owl:Class ;
+            rdfs:subClassOf :Artrópodes ;
+            rdfs:label "Crustáceos"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#Equinoderme
+:Equinoderme rdf:type owl:Class ;
+             rdfs:subClassOf :Animal ;
+             rdfs:label "Equinoderme"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#Espongiário
+:Espongiário rdf:type owl:Class ;
+             rdfs:subClassOf :Animal ;
+             rdfs:label "Espongiário"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#Gastrópodes
+:Gastrópodes rdf:type owl:Class ;
+             rdfs:subClassOf :Moluscos ;
+             rdfs:label "Gastrópodes"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#Insectos
+:Insectos rdf:type owl:Class ;
+          rdfs:subClassOf :Artrópodes ;
+          rdfs:label "Insectos"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#Mamíferos
+:Mamíferos rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( :Cordados
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :temEscamas ;
+                                                        owl:hasValue "N"
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :temPeleNua ;
+                                                        owl:hasValue "N"
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :temPelos ;
+                                                        owl:hasValue "S"
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:label "Mamíferos"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#Milípedes
+:Milípedes rdf:type owl:Class ;
+           rdfs:subClassOf :Artrópodes ;
+           rdfs:label "Milípedes"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#Moluscos
+:Moluscos rdf:type owl:Class ;
+          rdfs:subClassOf :Animal ;
+          rdfs:label "Moluscos"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#Nematelmintas
+:Nematelmintas rdf:type owl:Class ;
+               rdfs:subClassOf :Animal ;
+               rdfs:label "Nematelmintas"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#Peixes
+:Peixes rdf:type owl:Class ;
+        owl:equivalentClass [ owl:intersectionOf ( :Cordados
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :temEscamas ;
+                                                     owl:hasValue "S"
+                                                   ]
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :temRespiraçãoBranquial ;
+                                                     owl:hasValue "S"
+                                                   ]
+                                                 ) ;
+                              rdf:type owl:Class
+                            ] ;
+        rdfs:label "Peixes"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#Platelmintas
+:Platelmintas rdf:type owl:Class ;
+              rdfs:subClassOf :Animal ;
+              rdfs:label "Platelmintas"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#Répteis
+:Répteis rdf:type owl:Class ;
+         owl:equivalentClass [ owl:intersectionOf ( :Cordados
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :temRespiraçãoBranquial ;
+                                                      owl:hasValue "N"
+                                                    ]
+                                                  ) ;
+                               rdf:type owl:Class
+                             ] ;
+         rdfs:label "Répteis"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#Ser_Vivo
+:Ser_Vivo rdf:type owl:Class ;
+          rdfs:label "Ser Vivo"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#Vegetal
+:Vegetal rdf:type owl:Class ;
+         rdfs:subClassOf :Ser_Vivo ;
+         rdfs:label "Vegetal"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#Ósseos
+:Ósseos rdf:type owl:Class ;
+        rdfs:subClassOf :Peixes ;
+        rdfs:label "Ósseos"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#bacalhau
+:bacalhau rdf:type owl:NamedIndividual ,
+                   :Animal ;
+          :temColunaDorsal "S" ;
+          :temEscamas "S" ;
+          :temRespiraçãoBranquial "S" ;
+          rdfs:label "bacalhau"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#camarão
+:camarão rdf:type owl:NamedIndividual ,
+                  :Animal ;
+         rdfs:label "camarão"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#crocodilo
+:crocodilo rdf:type owl:NamedIndividual ,
+                    :Animal ;
+           :temColunaDorsal "S" ;
+           :temEscamas "S" ;
+           :temRespiraçãoBranquial "N" ;
+           rdfs:label "crocodilo"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#leão
+:leão rdf:type owl:NamedIndividual ,
+               :Animal ;
+      :temColunaDorsal "S" ;
+      :temEscamas "N" ;
+      :temPeleNua "N" ;
+      :temPelos "S" ;
+      rdfs:label "leão"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#lula
+:lula rdf:type owl:NamedIndividual ,
+               :Animal ;
+      rdfs:label "lula"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#mexilhão
+:mexilhão rdf:type owl:NamedIndividual ,
+                   :Animal ;
+          rdfs:label "mexilhão"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#papagaio
+:papagaio rdf:type owl:NamedIndividual ,
+                   :Animal ;
+          rdfs:label "papagaio"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#rã
+:rã rdf:type owl:NamedIndividual ,
+             :Animal ;
+    rdfs:label "rã"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#tarântula
+:tarântula rdf:type owl:NamedIndividual ,
+                    :Animal ;
+           rdfs:label "tarântula"@en .
+
+
+###  http://rpcw2024.di.uminho.pt/seres_vivos#urso
+:urso rdf:type owl:NamedIndividual ,
+               :Animal ;
+      :temColunaDorsal "S" ;
+      rdfs:label "urso"@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Anelídeos
+                :Artrópodes
+                :Celenterado
+                :Cordados
+                :Equinoderme
+                :Espongiário
+                :Moluscos
+                :Nematelmintas
+                :Platelmintas
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Anfíbios
+                :Aves
+                :Mamíferos
+                :Peixes
+                :Répteis
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Aracnídeos
+                :Centípedes
+                :Crustáceos
+                :Insectos
+                :Milípedes
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Bivalves
+                :Cefalópodes
+                :Gastrópodes
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi

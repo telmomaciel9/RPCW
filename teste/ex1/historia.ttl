@@ -1,0 +1,322 @@
+@prefix : <http://rpcw.di.uminho.pt/2024/historia/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://rpcw.di.uminho.pt/2024/historia/> .
+
+<http://rpcw.di.uminho.pt/2024/historia> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/historia#cultivaVegetal
+:cultivaVegetal rdf:type owl:ObjectProperty ;
+                rdfs:domain :Agricultor ;
+                rdfs:range :Vegetal .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/ajudaFazenda
+:ajudaFazenda rdf:type owl:ObjectProperty ;
+              rdfs:domain :Filho ;
+              rdfs:range :Fazenda .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/alimentaAnimal
+:alimentaAnimal rdf:type owl:ObjectProperty ;
+                rdfs:domain :Agricultor ;
+                rdfs:range :Animal .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/contrataTrabalhador
+:contrataTrabalhador rdf:type owl:ObjectProperty ;
+                     rdfs:domain :Agricultor ;
+                     rdfs:range :Trabalhador .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/criaAnimal
+:criaAnimal rdf:type owl:ObjectProperty ;
+            rdfs:domain :Agricultor ;
+            rdfs:range :Animal .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/cultivaFruta
+:cultivaFruta rdf:type owl:ObjectProperty ;
+              rdfs:domain :Agricultor ;
+              rdfs:range :Fruta .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/fazColheita
+:fazColheita rdf:type owl:ObjectProperty ;
+             rdfs:domain :Agricultor ;
+             rdfs:range :Fruta .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/fazGeleia
+:fazGeleia rdf:type owl:ObjectProperty ;
+           rdfs:domain :PessoaFamília ;
+           rdfs:range :Fruta .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/fazTrocas
+:fazTrocas rdf:type owl:ObjectProperty .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/filhoDe
+:filhoDe rdf:type owl:ObjectProperty ;
+         owl:inverseOf :temFilho .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/protege
+:protege rdf:type owl:ObjectProperty ;
+         rdfs:domain :Cachorro ;
+         rdfs:range :Fazenda .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/recebeRefeição
+:recebeRefeição rdf:type owl:ObjectProperty ;
+                rdfs:domain :Trabalhador .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/temAnimal
+:temAnimal rdf:type owl:ObjectProperty ;
+           rdfs:domain :Agricultor ;
+           rdfs:range :Animal .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/temFazenda
+:temFazenda rdf:type owl:ObjectProperty ;
+            rdfs:domain :Agricultor ;
+            rdfs:range :Fazenda .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/temFilho
+:temFilho rdf:type owl:ObjectProperty ;
+          rdfs:domain :PessoaFamília ;
+          rdfs:range :Filho .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/temOrdenado
+:temOrdenado rdf:type owl:ObjectProperty ;
+             rdfs:domain :Trabalhador .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/temTrator
+:temTrator rdf:type owl:ObjectProperty ;
+           rdfs:domain :Agricultor ;
+           rdfs:range :Trator .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/temVizinho
+:temVizinho rdf:type owl:ObjectProperty ;
+            rdfs:domain :Agricultor ;
+            rdfs:range :Agricultor .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/vendeProdutos
+:vendeProdutos rdf:type owl:ObjectProperty ;
+               rdfs:domain :Agricultor ;
+               rdfs:range :Produtos .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/historia/morada
+:morada rdf:type owl:DatatypeProperty .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/nome
+:nome rdf:type owl:DatatypeProperty .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/ordenado
+:ordenado rdf:type owl:DatatypeProperty .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/refeições
+:refeições rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/historia/Agricultor
+:Agricultor rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/Animal
+:Animal rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/Cachorro
+:Cachorro rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/Fazenda
+:Fazenda rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/Feira
+:Feira rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/Filho
+:Filho rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/Fruta
+:Fruta rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/PessoaFamília
+:PessoaFamília rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/Produtos
+:Produtos rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/Trabalhador
+:Trabalhador rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/Trator
+:Trator rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/Vegetal
+:Vegetal rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/historia/Alface
+:Alface rdf:type owl:NamedIndividual .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/Ana
+:Ana rdf:type owl:NamedIndividual ,
+              :Filho ;
+     :fazGeleia :Geleia ;
+     :nome "Ana" .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/Banana
+:Banana rdf:type owl:NamedIndividual .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/Cenoura
+:Cenoura rdf:type owl:NamedIndividual .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/FeiraSãoJosé
+:FeiraSãoJosé rdf:type owl:NamedIndividual .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/Galinhas
+:Galinhas rdf:type owl:NamedIndividual .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/Geleia
+:Geleia rdf:type owl:NamedIndividual ;
+        :fazGeleia :Geleia .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/Laranja
+:Laranja rdf:type owl:NamedIndividual .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/Maça
+:Maça rdf:type owl:NamedIndividual .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/Pedro
+:Pedro rdf:type owl:NamedIndividual ,
+                :Filho ;
+       :ajudaFazenda :fazendaSrJoao ;
+       :nome "Pedro" .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/Porcos
+:Porcos rdf:type owl:NamedIndividual .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/Rex
+:Rex rdf:type owl:NamedIndividual ,
+              :Cachorro ;
+     :protege :fazendaSrJoao .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/Sr_Carlos
+:Sr_Carlos rdf:type owl:NamedIndividual ,
+                    :Agricultor ;
+           :cultivaVegetal :Alface ,
+                           :Cenoura ,
+                           :Tomate ;
+           :fazTrocas :Sr_João ;
+           :temVizinho :Sr_João ;
+           :vendeProdutos :FeiraSãoJosé ;
+           :nome "Sr Carlos" .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/Sr_João
+:Sr_João rdf:type owl:NamedIndividual ,
+                  :Agricultor ;
+         :contrataTrabalhador :Trabalhador ;
+         :criaAnimal :Galinhas ,
+                     :Porcos ,
+                     :Vaca ;
+         :cultivaFruta :Banana ,
+                       :Laranja ,
+                       :Maça ;
+         :temFazenda :fazendaSrJoao ;
+         :temFilho :Ana ,
+                   :Pedro ;
+         :temTrator :Trator ;
+         :temVizinho :Sr_Carlos ;
+         :vendeProdutos :FeiraSãoJosé ;
+         :morada "São José" ;
+         :nome "Sr João" .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/Sra_Maria
+:Sra_Maria rdf:type owl:NamedIndividual ,
+                    :PessoaFamília ;
+           :ajudaFazenda :fazendaSrJoao ;
+           :temFilho :Ana ,
+                     :Pedro ;
+           :nome "Sra Maria" .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/Tomate
+:Tomate rdf:type owl:NamedIndividual .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/Trabalhador
+:Trabalhador rdf:type owl:NamedIndividual .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/Trator
+:Trator rdf:type owl:NamedIndividual .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/Vaca
+:Vaca rdf:type owl:NamedIndividual .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/fazendaSrCarlos
+:fazendaSrCarlos rdf:type owl:NamedIndividual .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia/fazendaSrJoao
+:fazendaSrJoao rdf:type owl:NamedIndividual .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
